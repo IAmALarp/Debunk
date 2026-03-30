@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debunk Page</title>
+
+  <!-- 🔴 Discord Embed Meta -->
+  <meta property="og:title" content="Debunking">
+  <meta property="og:description" content="Breaking down false claims with real evidence.">
+  <meta property="og:image" content="https://yourdomain.com/preview.png">
+  <meta property="og:url" content="https://exploiter.lol">
+  <meta name="theme-color" content="#ff0000">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: 'Bebas Neue', sans-serif;
+    }
+
+    /* 🔴 Discord-style embed (onsite visual, optional) */
+    .embed {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #2b2d31;
+      border-left: 6px solid red;
+      padding: 12px 18px;
+      border-radius: 10px;
+      color: white;
+      font-size: 1.6rem;
+      letter-spacing: 1px;
+      z-index: 999;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+
+    .tap-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      z-index: 10;
+      cursor: pointer;
+      letter-spacing: 3px;
+    }
+
+    .container {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+      color: red;
+      text-shadow: 0 0 15px red;
+    }
+
+    .debunk-section {
+      margin: 60px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .debunk-section img {
+      width: 100%;
+      border: 2px solid red;
+    }
+
+    .claim {
+      color: orange;
+      font-size: 1.5rem;
+    }
+
+    .debunk {
+      color: lightgreen;
+      font-size: 1.5rem;
+    }
+
+    .floating-text {
+      position: fixed;
+      color: rgba(255,0,0,0.2);
+      pointer-events: none;
+      animation: fadeMove 4s forwards;
+    }
+
+    @keyframes fadeMove {
+      0% { opacity: 0; transform: scale(0.8) translateY(20px); }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: scale(1.3) translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔴 Optional on-site embed box -->
+  <div class="embed">Debunking</div>
+
+  <!-- Hidden audio -->
+  <video id="vid" autoplay muted loop playsinline style="display:none;">
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <!-- Tap to start -->
+  <div class="tap-overlay" id="overlay">
+    ENTER
+  </div>
+
+  <div class="container">
+    <h1>DEBUNKED</h1>
+
+    <!-- SECTION 1 -->
+    <div class="debunk-section">
+      <img src="ee310867bed66a8d64c22d51ca3c4259.png">
+      <div class="claim">CLAIM: Exploiting </div>
+      <div class="debunk">
+        DEBUNK: This image shows ONE singular UBG log, this could mean lots of several things. Even if I did exploit, which I didnt I shouldnt be banned over ONE singular log that is probably false knowing yper. Whenever I was in sparta he banned me in an IPR for "injecting" when i was just formed up but that is just simply false, Then he banned me again and said you got logged again which is for sure false because it shows there is only 1 log on his shitty anticheat.
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="debunk-section">
+      <img src="image (1).webp">
+      <div class="claim">CLAIM: Another false statement</div>
+      <div class="debunk">
+        DEBUNK: For this debunk, I was claimed as someone I was not. I can admit i was in their gc but I never went to their prs on ANY Alternate Accounts EVER. This literally just shows a random person saying things and it doesnt prove anything.
+      </div>
+    </div>
+
+    <!-- more sections unchanged... -->
+
+  </div>
+
+  <script>
+    const video = document.getElementById("vid");
+    const overlay = document.getElementById("overlay");
+
+    window.addEventListener("load", () => {
+      video.play().catch(() => {});
+    });
+
+    overlay.addEventListener("click", () => {
+      video.muted = false;
+      video.volume = 1;
+      overlay.style.display = "none";
+    });
+
+    const words = ["FALSE", "FAKE", "MISLEADING", "FALSE LOGGED"];
+
+    function createText() {
+      const el = document.createElement("div");
+      el.className = "floating-text";
+      el.innerText = words[Math.floor(Math.random() * words.length)];
+
+      el.style.left = Math.random() * window.innerWidth + "px";
+      el.style.top = Math.random() * window.innerHeight + "px";
+      el.style.fontSize = (2 + Math.random() * 3) + "rem";
+
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 4000);
+    }
+
+    setInterval(createText, 600);
+  </script>
+
+</body>
+</html>
